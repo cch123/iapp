@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/Knetic/govaluate"
@@ -13,8 +14,8 @@ func main() {
 		for j := 0; j < len(ops); j++ {
 			for k := 0; k < len(ops); k++ {
 				for l := 0; l < len(ops); l++ {
-					exprStr := byteToStr(str[0]) + ops[j] + byteToStr(str[1]) +
-						ops[k] + byteToStr(str[2]) + ops[l] + byteToStr(str[3])
+					//exprStr := byteToStr(str[0]) + ops[j] + byteToStr(str[1]) + ops[k] + byteToStr(str[2]) + ops[l] + byteToStr(str[3])
+					exprStr := fmt.Sprintf("%c%s%c%s%c%s%c", str[0], ops[j], str[1], ops[k], str[2], ops[l], str[3])
 
 					expr, _ := govaluate.NewEvaluableExpression(string(exprStr))
 					res, _ := expr.Evaluate(map[string]interface{}{})
