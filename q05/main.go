@@ -10,7 +10,7 @@ func main() {
 	var maxCntArr = []int{15, 15, 10, 2}
 	var counter int
 	for {
-		if calcTotal(valArr, curCntArr) == N && totalCoin(curCntArr) < 15 { //&& totalCoin(curCntArr) < 15 {
+		if calcTotal(valArr, curCntArr) == N && totalCoin(curCntArr) <= 15 { //&& totalCoin(curCntArr) < 15 {
 			fmt.Println(curCntArr)
 			counter++
 		}
